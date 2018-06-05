@@ -1,0 +1,28 @@
+{
+  "name": "npm-scripts",
+  "version": "1.0.0",
+  "description": "Npm scripts for automating build tasks",
+  "main": "index.js",
+  "scripts": {
+    "del": "del dist/css/*.css dist/js/*.js",
+    "scss": "node-sass -o dist/css/styles.css assets/scss/styles.scss",
+    "minify:css": "cleancss -o dist/css/styles.min.css dist/css/styles.css",
+    "build:css": "npm run scss && npm run minify:css",
+    "build": "npm run del && npm run build:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lavanyaks/npm-scripts.git"
+  },
+  "author": "Lavanya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lavanyaks/npm-scripts/issues"
+  },
+  "homepage": "https://github.com/lavanyaks/npm-scripts#readme",
+  "devDependencies": {
+    "clean-css-cli": "^4.1.11",
+    "del-cli": "^1.1.0",
+    "node-sass": "^4.9.0"
+  }
+}
